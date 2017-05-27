@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mysql:
+    image: turi/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: kafka
+  zookeeper:
+    image: turi/zookeeper
+    hostname: zookeeper
+  kafka:
+    depends_on:
+      - zookeeper
+    build: .
+    image: turi/kafka_211
+    environment:
+      ZKHOST: zookeeper
+      BROKERID: -1
