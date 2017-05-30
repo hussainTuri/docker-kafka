@@ -88,15 +88,15 @@ Start consuming messages from another client in another terminal
 
 ### 11. Publish messages
 [Python code](https://github.com/hussainTuri/kafka-python)
+
 ###### From standard input
-    docker exec -it <mysql_container> /bin/bash
     cd /kafka-python/producer
      
     # Script will send each line you type as message to topic 'customers'. type exit after last line. 
     python producer.py -c 
     
 ###### From file
-    #  
+    # Read file line by line and send it to kafka 
     python producer.py -f /kafka-python/resources/customers
 
 ###### From database (Mysql)
@@ -108,7 +108,6 @@ Start consuming messages from another client in another terminal
 [Python code](https://github.com/hussainTuri/kafka-python)
 
 ###### To standard input
-    docker exec -it <mysql_container> /bin/bash
     cd /kafka-python/consumer
      
     # Read new messages from Kafka and print them on screen
@@ -120,4 +119,4 @@ Start consuming messages from another client in another terminal
 
 ###### To database (Mysql)
     # Read new messages from Kafka and dump them to db
-    python producer.py -d       
+    python producer.py -d         
