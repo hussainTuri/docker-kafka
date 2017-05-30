@@ -5,6 +5,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: kafka
+    #volumes:
+     # - /Users/abrarhussain/Documents/projects/kafka/code:/abrar
   zookeeper:
     image: turi/zookeeper
     hostname: zookeeper
